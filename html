@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game – Main Menu</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      font-family: "Georgia", "Times New Roman", serif;
+      overflow: hidden;
+    }
+
+    .game-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100vw;
+      max-width: 2160px;
+      aspect-ratio: 9 / 18;
+      background: #000;
+      overflow: hidden;
+    }
+
+    /* Фон */
+    .background {
+      position: absolute;
+      inset: 0;
+      background-image: url("IMG_20260205_224919.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Правая панель */
+    .menu-panel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 40px;
+      gap: 22px;
+    }
+
+    .menu-button {
+      width: 100%;
+      padding: 18px 24px;
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      color: #f5f5f5;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.25);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.25s ease;
+    }
+
+    .menu-button:hover {
+      background: rgba(255,255,255,0.08);
+      box-shadow: inset 0 0 20px rgba(255,255,255,0.15);
+    }
+
+    /* Главная кнопка */
+    .menu-button.primary {
+      padding: 36px 28px;
+      font-size: 36px;
+      letter-spacing: 0.12em;
+      border-width: 2px;
+    }
+
+    .menu-button.multiline {
+      line-height: 1.2;
+    }
+
+    .menu-button.danger {
+      opacity: 0.6;
+    }
+
+    .menu-button.danger:hover {
+      opacity: 1;
+      background: rgba(255,255,255,0.12);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="game-wrapper">
+    <div class="background"></div>
+
+    <div class="menu-panel">
+      <button class="menu-button primary" onclick="wakeUp()">очнуться</button>
+      <button class="menu-button" onclick="rememberPath()">вспомнить путь</button>
+      <button class="menu-button" onclick="rememberFriends()">вспомнить друзей</button>
+      <button class="menu-button multiline" onclick="rememberImportant()">вспомнить<br>самое важное</button>
+      <button class="menu-button danger" onclick="forget()">забыть.</button>
+    </div>
+  </div>
+
+  <script>
+    function wakeUp() { console.log('WAKE UP'); }
+    function rememberPath() { console.log('PATH'); }
+    function rememberFriends() { console.log('FRIENDS'); }
+    function rememberImportant() { console.log('IMPORTANT'); }
+    function forget() { console.log('FORGET'); }
+  </script>
+</body>
+</html>
